@@ -28,7 +28,7 @@ export class ToDoCreateComponent implements OnInit {
     this.todoForm = this.fb.group({
       id:[null],
       name:[null, Validators.required],
-      status:[null, Validators.required]
+      status:[false]
     })
   }
 

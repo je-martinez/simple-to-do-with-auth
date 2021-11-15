@@ -1,7 +1,13 @@
 
 $breakpoint-alpha: 480px;
 
+app-small-loading{
+  position: absolute;
+  right: 0;
+}
+
 .rwd-table {
+  position: relative;
   margin: 1em 0;
   min-width: 300px;
 
@@ -82,3 +88,17 @@ h1 {
   }
 }
 
+.options{
+  display: flex !important;
+  flex-direction: row !important;
+  p{
+    width: 100%;
+  }
+}
+
+.options-start{
+  text-align: start;
+}
+.options-end{
+  text-align: end;
+}

@@ -1,5 +1,9 @@
-<p class="selectlabel" (click)="navigateToNewTodo()">Add New Todo</p>
-<table class="rwd-table">
+<div class="options">
+  <p class="selectlabel options-start" (click)="navigateToNewTodo()">Add New Todo</p>
+  <p class="selectlabel options-end" (click)="toogleService()">Toogle Service</p>
+</div>
+<table class="rwd-table" *ngIf="isFakeService">
+  <app-small-loading *ngIf="loading"></app-small-loading>
   <tr>
     <th>ID</th>
     <th>Name</th>
@@ -7,7 +11,7 @@
     <th></th>
     <th></th>
   </tr>
-  <tr *ngFor="let item of getTodos()">
+  <tr *ngFor="let item of todosFakeService">
     <td data-th="ID">{{item?.id}}</td>
     <td data-th="Name">{{item?.name}}</td>
     <td data-th="Status">{{item?.status}}</td>
@@ -16,3 +20,20 @@
   </tr>
 </table>
 
+<table class="rwd-table" *ngIf="isAPI">
+  <app-small-loading *ngIf="loading"></app-small-loading>
+  <tr>
+    <th>UserId</th>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Completed</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let item of todosAPI">
+    <td data-th="userId">{{item?.userId}}</td>
+    <td data-th="id">{{item?.id}}</td>
+    <td data-th="title">{{item?.title}}</td>
+    <td data-th="completed">{{item?.completed}}</td>
+    <td></td>
+  </tr>
+</table>
