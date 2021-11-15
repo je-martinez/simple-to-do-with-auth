@@ -1,0 +1,11 @@
+<form [formGroup]="loginForm" [ngClass]="classesContainer">
+  <p class="title">Log in</p>
+  <input formControlName="username" type="text" placeholder="Username" tabindex="-1" autofocus/>
+  <i class="fa fa-user"></i>
+  <input formControlName="password" type="password" placeholder="Password" />
+  <i class="fa fa-key"></i>
+  <button [disabled]="loginForm?.invalid" type="button" (click)="login()">
+    <i class="spinner"></i>
+    <span class="state">{{title}}</span>
+  </button>
+</form>

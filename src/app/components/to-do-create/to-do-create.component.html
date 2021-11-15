@@ -1,0 +1,13 @@
+<form [formGroup]="todoForm" class="login">
+  <p class="title">New Todo</p>
+  <input formControlName="name" type="text" placeholder="Name" tabindex="-1" autofocus/>
+  <i class="fa fa-tasks"></i>
+  <div class="checkbox-container">
+    <input type="checkbox" formControlName="status" id="status">
+    <label for="status"><b>Status</b></label>
+  </div>
+  <button [disabled]="todoForm?.invalid" type="button" (click)="createTodo()">
+    <i class="spinner"></i>
+    Create
+  </button>
+</form>
